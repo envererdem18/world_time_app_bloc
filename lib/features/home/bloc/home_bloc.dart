@@ -44,7 +44,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(HomeState.loaded(timezones: success));
       },
       failure: (failure) {
-        print(failure);
+        emit(const HomeState.onError("could not loaded"));
       },
     );
   }
